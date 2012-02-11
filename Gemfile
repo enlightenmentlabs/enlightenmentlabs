@@ -49,7 +49,6 @@ group :test, :development do
 end
 
 group :cucumber do
-	gem 'autotest'
 	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'cucumber-rails'
