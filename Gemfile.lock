@@ -89,7 +89,9 @@ GEM
     multi_json (1.0.4)
     nokogiri (1.5.0)
     orm_adapter (0.0.6)
+    pg (0.13.0)
     polyglot (0.3.3)
+    postgres-pr (0.6.3)
     rack (1.4.1)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -175,6 +177,8 @@ DEPENDENCIES
   haml
   jquery-rails
   machinist
+  pg
+  postgres-pr
   rails (= 3.2.1)
   rspec-rails
   sass

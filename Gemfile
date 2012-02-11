@@ -5,7 +5,6 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -41,14 +40,18 @@ gem 'haml'
 gem 'sass'
 gem 'devise'
 
+group :production do
+	# gem 'activerecord-postgresql-adapter'
+	gem 'pg'
+	gem 'postgres-pr'
+end
+
 group :test, :development do
+	gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'machinist'
 	gem 'faker'
 	gem 'shoulda'
-end
-
-group :cucumber do
 	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'cucumber-rails'
