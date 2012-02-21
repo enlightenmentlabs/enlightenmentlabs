@@ -46,11 +46,11 @@ group :production do
     gem 'postgres-pr'
 end
 
+gem 'faker'
 group :test, :development do
     gem 'sqlite3'
     gem 'rspec-rails'
     gem 'machinist'
-    gem 'faker'
     gem 'shoulda'
     gem 'capybara'
     gem 'database_cleaner'
