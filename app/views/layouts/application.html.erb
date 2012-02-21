@@ -11,31 +11,35 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <%= csrf_meta_tags %>
 
-    <script src="/javascripts/libs/modernizr-2.0.6.min.js"></script>
+    <%= csrf_meta_tags %>
     <%= javascript_include_tag "application" %>
 
-    <link rel="stylesheet" href="/stylesheets/style.css"/>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <link href='http://fonts.googleapis.com/css?family=Jura:600' rel='stylesheet' type='text/css'/>
+    <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
   <body>
     <div id="container">
-      <header>
-      </header>
+      <aside>
+        <a id="logo" href="/"><h2>enlightenment_labs</h2></a>
+        <ul id="navigation">
+          <% (0..4).map{|i| 'schedule'}.each do |s| -%>
+            <li><%= link_to s %></li>
+            <!-- <li><a href="/schedule"><span><%= s %></span></a></li> -->
+          <% end %>
+        </ul>
+      </aside>
 
       <div id="main" role="main">
         <%= yield %>
       </div>
 
       <footer>
+        <p>All rights reserved.  All materials on this site are blah blah blah meaningless legalese that everyone ignores because we all know it's bullshit.  Copyright &copy; 2012, Enlightenment Labs, LLC</p>
       </footer>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.s"></script>
-    <script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.7.1.min.js"><\/script>')</script>
-    <script defer src="/javascripts/plugins.js"></script>
-    <script defer src="/javascripts/script.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
 
     <script> // Change UA-XXXXX-X to be your site's ID
       // window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];

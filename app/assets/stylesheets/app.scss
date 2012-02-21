@@ -1,22 +1,219 @@
-body{
-    background-color:gray;
 
-    #container{
-        margin:0 auto;
-        width:900px;
-        background-color:white;
+@import 'settings';
 
-        >header{
-            font-size:32pt;
-            color:gold;
+@mixin scheme{
+    color: $txtPrim;
+    background-color: $bgPrim;
+}
+
+@mixin dataEntry{
+    background-color: $ctrlBack;
+    color: $txtData;
+    width: 250px;
+    border-style: none;
+
+    &:focus{
+        background-color: #383d41;
+        color: $txtBright;
+    }
+}
+
+* {
+    margin:0;
+    padding:0;
+}
+
+html{
+    @include scheme;
+
+    body{
+        @include scheme;
+
+        font: 75% / 1.5em 'Jura', "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+        text-shadow: $txtShad 0px 0px 0px;
+
+        h1, h2{
+            font-size: 1.5em;
+            font-weight: bold;
+            color:$txtBright;
+            margin-bottom: 5px;
+            display: block;
         }
 
-        #main{
-
+        h3{
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            font-weight: normal;
+            font-style: normal;
+            display: block;
         }
 
-        >footer{
+        p{
+            margin-bottom: 1.5em;
+            clear:both;
+        }
 
+        a{
+            color: $txtBright;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        img{
+            vertical-align: bottom;
+            border-style: none;
+        }
+
+        form{
+            overflow: hidden;
+
+            .left{
+                width: 260px;
+                float: left;
+            }
+
+            .right{
+                width: 260px;
+                height: auto;
+                float: right;
+            }
+
+            p {
+                height: auto;
+            }
+
+            input{
+                @include dataEntry;
+
+                height: 19px;
+                padding: 0 5px;
+            }
+
+            textarea{
+                @include dataEntry;
+
+                height: 120px;
+                overflow: auto;
+                padding: 5px;
+                font-size: inherit 1px / inherit;
+            }
+
+            input[type='button']{
+                width: 50px;
+                // background: url(/assets/send.png) no-repeat;
+                height: 25px;
+            }
+        }
+
+        .error{
+            background-color: #722e2e;
+        }
+
+        #container{
+            width: 850px;
+            overflow: hidden;
+            padding: 67px 10px 0 50px;
+
+            aside{
+                width: 250px;
+                float: left;
+                padding-bottom: 55px;
+
+                a#logo{
+                    width: 244px;
+                    height: 118px;
+                    display: block;
+                    // background: url(/assets/logo.png) no-repeat 0 0;
+                    margin-bottom: 53px;
+
+                    h2{
+                        font-weight: 600;
+                        font-size:2em;
+                    }
+                }
+
+                ul{
+                    list-style-type:none;
+                    margin-bottom: 2em;
+                    font-weight: bold;
+                    font-size: 1.5em;
+
+                    li{
+                        a{
+                            color: $navLink;
+                            // text-decoration: none;
+                            &.current, &:hover{
+                                // color: $txtBright;
+                                color: $clAccent;
+                                text-decoration: underline;
+                            }
+
+                            span{
+                                color: $navLink;
+                                &.current, &:hover{
+                                    color: $txtBright;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            #main{
+                // margin-top: 55px;
+                // p{
+                //     width: 575px;
+                //     height: 692px;
+                // }
+
+                width: 575px;
+                float: right;
+                padding-bottom: 55px;
+                margin-top: 171px;
+                overflow: hidden;
+                display: inline;
+                padding-left: 2em;
+                border-left: 1px solid $clAccent;
+
+                // .row {
+                //     overflow: hidden;
+                //     width: 700px;
+                //     margin-bottom: 60px;
+
+                //     .left {
+                //         float: left;
+                //         width: 180px;
+                //     }
+
+                //     .right {
+                //         float: right;
+                //         width: 500px;
+                //         height: 306px;
+                //         position: relative;
+
+                //         img {
+                //             position: absolute;
+                //         }
+                //     }
+                // }
+            }
+
+            footer {
+                margin-bottom: 10px;
+                color: $txtLess;
+                // background: url(/assets/logo_small.png) no-repeat 197px 17px;
+                border-top: 1px solid $brdLine;
+                font-size: 0.8em;
+                clear: both;
+                padding: 10px 0 50px 215px;
+                width: 635px;
+
+                p{
+                    margin-left: 60px;
+                }
+            }
         }
     }
 }
